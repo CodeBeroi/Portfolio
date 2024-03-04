@@ -17,7 +17,7 @@ const PortfolioPage = () => {
         {
             id: 1,
             type: 'demo',
-            color: "from-customred to-custombrown",
+            color: "from-customred to-custombeige",
             title: "Share AI generated images",
             desc: "A short and sweet project that uses the power of DallE AI to generate custom images and share them with the community.",
             img: "dalle-clone-demo.png",
@@ -28,7 +28,18 @@ const PortfolioPage = () => {
         {
             id: 2,
             type: 'demo',
-            color: "from-custombrown to-custombeige",
+            color: "from-custombeige to-customcyan",
+            title: "Threads Clone",
+            desc: "Find the design and main features of the famous app Threads.",
+            img: "threads-clone.png",
+            link: "https://threads-clone-7a65.vercel.app/create-thread/",
+            repository: "https://github.com/MathildeMnrt/threads_clone",
+            tech: ["Next.js","React","MongoDB","Clerk"]
+        },
+        {
+            id: 3,
+            type: 'demo',
+            color: "from-customcyan to-customgreen",
             title: "ThreeJS / DallE Demo",
             desc: "Little project to learn ThreeJS while using DallE generated content",
             img: "https://images.pexels.com/photos/18023772/pexels-photo-18023772/free-photo-of-close-up-of-a-person-holding-a-wristwatch.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
@@ -38,19 +49,19 @@ const PortfolioPage = () => {
 
         },
         {
-            id: 3,
+            id: 4,
             type: 'content',
-            color: "from-custombeige to-customcyan",
-            title: "Database modelisation and API setup",
+            color: "from-customgreen to-customred",
+            title: "Back-end overhaul",
             desc: "Migrating an existing NoSQL database to a relational model using TypeORM and PostgreSQL. API creation and documentation to be used by an existing front",
             img: "https://images.pexels.com/photos/18540208/pexels-photo-18540208/free-photo-of-wood-landscape-water-hill.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
             link: "https://lama.dev",
             tech: ["TypeORM", "Nest.js", "PostgreSQL"]
         },
         {
-            id: 4,
+            id: 5,
             type: 'content',
-            color: "from-customcyan to-customgreen",
+            color: "from-customred to-custombeige",
             title: "My portfolio",
             desc: "Just linking this here so you can check how I built this portfolio!",
             img: "https://images.pexels.com/photos/6894528/pexels-photo-6894528.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
@@ -88,7 +99,7 @@ const PortfolioPage = () => {
                                 <div className='flex flex-col gap-8 text-white'>
                                     <h1 className='text-xl font-bold md-text-4xl lg:text-6xl xl:text-6xl'>{item.title}</h1>
                                     <div className='relative w-80 h-56 md:w-96 md:h-64 lg:w-[500px] lg:h-[350px] xl:w-[600px] xl:h-[420px]'>
-                                        <Image src={item.img} alt="" fill className='rounded-md shadow-2xl' unoptimized={true}/>
+                                        <Image src={item.img} alt="" fill className='rounded-md shadow-2xl object-cover ' unoptimized={true}/>
                                     </div>
                                     <p className='w-80 md:w96 lg:w-[500px] lg:text-lg xl:w-[600px]'>
                                         {item.desc}
