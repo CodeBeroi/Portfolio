@@ -15,31 +15,42 @@ const PortfolioPage = () => {
 
     const items = [
         {
-            id: 1,
+            id: 7,
             type: 'demo',
-            color: "from-customred to-custombeige",
+            color: "from-red-100 to-customred",
             title: "Share AI generated images",
             desc: "A short and sweet project that uses the power of DallE AI to generate custom images and share them with the community.",
             img: "dalle-clone-demo.png",
             link: "https://dalle-clone-demo.mathildemenoret.com/",
             repository: "https://github.com/CodeBeroi/project-threejs-ai",
-            tech: ["Node.js", "Express","React","MongoDB", "DallE"]
+            tech: ["Node.js", "Express", "React", "MongoDB", "DallE"]
+        },
+        {
+            id: 1,
+            type: 'demo',
+            color: "from-customred to-gradient-1",
+            title: "Share AI generated images",
+            desc: "A short and sweet project that uses the power of DallE AI to generate custom images and share them with the community.",
+            img: "dalle-clone-demo.png",
+            link: "https://dalle-clone-demo.mathildemenoret.com/",
+            repository: "https://github.com/CodeBeroi/project-threejs-ai",
+            tech: ["Node.js", "Express", "React", "MongoDB", "DallE"]
         },
         {
             id: 2,
             type: 'demo',
-            color: "from-custombeige to-customcyan",
+            color: "from-gradient-1 to-gradient-2",
             title: "Threads Clone",
             desc: "Find the design and main features of the famous app Threads.",
             img: "threads-clone.png",
             link: "https://threads-clone-7a65.vercel.app/create-thread/",
             repository: "https://github.com/MathildeMnrt/threads_clone",
-            tech: ["Next.js","React","MongoDB","Clerk"]
+            tech: ["Next.js", "React", "MongoDB", "Clerk"]
         },
         {
             id: 3,
             type: 'demo',
-            color: "from-customcyan to-customgreen",
+            color: "from-gradient-2 to-gradient-3",
             title: "ThreeJS / DallE Demo",
             desc: "Little project to learn ThreeJS while using DallE generated content",
             img: "https://images.pexels.com/photos/18023772/pexels-photo-18023772/free-photo-of-close-up-of-a-person-holding-a-wristwatch.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
@@ -50,8 +61,19 @@ const PortfolioPage = () => {
         },
         {
             id: 4,
+            type: 'demo',
+            color: "from-gradient-3 to-gradient-4",
+            title: "AI Summarizer",
+            desc: "A simple page that summarizes the content of an URL using OpenAI.",
+            img: "ai-summarizer.png",
+            link: "https://ai-summarizer.mathildemenoret.com/",
+            repository: "https://github.com/MathildeMnrt/ai-summarizer",
+            tech: ["React", "Redux", "RapidAPI"]
+        },
+        {
+            id: 5,
             type: 'content',
-            color: "from-customgreen to-customred",
+            color: "from-gradient-4 to-gradient-5",
             title: "Back-end overhaul",
             desc: "Migrating an existing NoSQL database to a relational model using TypeORM and PostgreSQL. API creation and documentation to be used by an existing front",
             img: "https://images.pexels.com/photos/18540208/pexels-photo-18540208/free-photo-of-wood-landscape-water-hill.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
@@ -59,9 +81,9 @@ const PortfolioPage = () => {
             tech: ["TypeORM", "Nest.js", "PostgreSQL"]
         },
         {
-            id: 5,
+            id: 6,
             type: 'content',
-            color: "from-customred to-custombeige",
+            color: "from-gradient-5 to-customred",
             title: "My portfolio",
             desc: "Just linking this here so you can check how I built this portfolio!",
             img: "https://images.pexels.com/photos/6894528/pexels-photo-6894528.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
@@ -91,26 +113,32 @@ const PortfolioPage = () => {
 
                 <div className='sticky top-0 flex h-screen gap-4 items-center overflow-hidden'>
                     <motion.div style={{ x }} className='flex'>
-                        <div className='h-screen w-screen flex items-center justify-center bg-gradient-to-r from-purple-300 to-customred' />
+                        <div className='h-screen w-screen flex items-center justify-center bg-gradient-to-r from-red-100 to-red-100' />
                         {items.map((item) => (
                             <div className={`h-screen w-screen flex items-center justify-center bg-gradient-to-r ${item.color}`}
                                 key={item.id}
                             >
                                 <div className='flex flex-col gap-8 text-white'>
                                     <h1 className='text-xl font-bold md-text-4xl lg:text-6xl xl:text-6xl'>{item.title}</h1>
-                                    <div className='relative w-80 h-56 md:w-96 md:h-64 lg:w-[500px] lg:h-[350px] xl:w-[600px] xl:h-[420px]'>
-                                        <Image src={item.img} alt="" fill className='rounded-md shadow-2xl object-cover ' unoptimized={true}/>
-                                    </div>
-                                    <p className='w-80 md:w96 lg:w-[500px] lg:text-lg xl:w-[600px]'>
-                                        {item.desc}
-                                    </p>
+                                    <div className='flex'>
+                                        <div className='relative w-90 h-60 md:w-110 md:h-70 lg:w-[500px] lg:h-[350px] xl:w-[600px] xl:h-[420px]'>
+                                            <Image src={item.img} alt="" fill className='rounded-md shadow-2xl object-cover ' unoptimized={true} />
 
-                                    <div className='flex gap-4'>
-                                        {item.tech.map((tec) => (
-                                            <div className='bg-customred text-white px-4 py-2 rounded-full' key={tec}>{tec}</div>
-                                        ))
-                                        }
+                                        </div>
+                                        <div className='flex flex-col m-10'>
+                                            <p className='w-80 md:w-96 lg:w-[500px] lg:text-lg xl:w-[600px]'>
+                                                {item.desc}
+                                            </p>
+
+                                            <div className='flex gap-4 mt-10'>
+                                                {item.tech.map((tec) => (
+                                                    <div className='bg-gray-700 text-white px-4 py-2 rounded-full' key={tec}>{tec}</div>
+                                                ))
+                                                }
+                                            </div>
+                                        </div>
                                     </div>
+
 
                                     <div className='w-full flex gap-4 justify-end'>
 

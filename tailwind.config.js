@@ -14,10 +14,11 @@ module.exports = {
       },
       colors: {
         'customred': "#E7473C",
-        'custombrown': '#56423E',
-        'custombeige': '#BEA6A1',
-        'customcyan': '#009D99',
-        'customgreen': '#006666'
+        'gradient-1': '#691E06',
+        'gradient-2': '#8F250C',
+        'gradient-3': '#BB4D00',
+        'gradient-4': '#CA5310',
+        'gradient-5': '#FBBA72'
       },
     },
     fontFamily: {
